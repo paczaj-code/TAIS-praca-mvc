@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="d-flex  position-relative flex-wrap ">
+        {% for article in articles %}
+
+            <div class="w-25 p-2 shadow-sm my-4 mx-1 bg-light flex-grow-1">
+                <h3>{{ article.title }}</h3>
+                <hr/>
+
+                <p>Autor: {{ article.author }}</p>
+                <p><span class="fw-bold">Utworzony: </span> {{ article.created_at |date("d/m/Y") }}</p>
+                <a class="btn btn-info btn-sm" href="/article/{{ article.id }}" role="button">Więcej</a>
+            </div>
+
+        {% endfor %}
+    </div>
+{% endblock %}

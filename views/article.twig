@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+    <div class="d-flex justify-content-between">
+        <div class="mt-4">
+            <h3>{{ article.title }}</h3>
+            <hr/>
+            <div>
+                {{ article.body }}
+            </div>
+            <hr/>
+            <div class="d-flex justify-content-between">
+                <p><span class="fw-bold">Autor: </span> {{ article.author }}</p>
+                <p><span class="fw-bold">Utworzony: </span> {{ article.created_at |date("d/m/Y") }}</p>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}
